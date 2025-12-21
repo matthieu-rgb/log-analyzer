@@ -1,13 +1,13 @@
 # log-analyzer
 Realisation d'un log-analyzer pour ma formation en cyber chez jedha
 
-# 🛡️ CyberLog Analyzer — Mon premier outil de détection d'attaques
+#  CyberLog Analyzer — Mon premier outil de détection d'attaques
 
 > **Disclaimer** : Je suis en formation cybersécurité chez Jedha. Ce projet a été réalisé dans le cadre de mon apprentissage. Le code n'est pas parfait, la méthode non plus, mais ça fonctionne et j'ai appris plein de trucs en le faisant. Si t'es débutant aussi, j'espère que ce retour d'expérience t'aidera !
 
 ---
 
-## 🎯 C'est quoi ce projet ?
+##  C'est quoi ce projet ?
 
 Un outil qui analyse des fichiers de logs Apache/Nginx pour détecter automatiquement :
 - Les tentatives d'attaques **XSS** (Cross-Site Scripting)
@@ -18,7 +18,7 @@ Au début c'était un simple script Python en ligne de commande. À la fin, c'es
 
 ---
 
-## 🤔 Pourquoi ce projet ?
+##  Pourquoi ce projet ?
 
 En formation, on passe du temps à lire des logs. Beaucoup de logs. Des milliers de lignes qui ressemblent à ça :
 
@@ -30,7 +30,7 @@ C'est là que je suis arriver au point de la formation ou justement on me demand
 de creer un analyzer de log et c'est la que demarre cette histoire :
 ---
 
-## 📝 Étape 1 — Comprendre ce qu'on manipule
+##  Étape 1 — Comprendre ce qu'on manipule
 
 Avant de coder, il fallait que je comprenne la structure d'une ligne de log. Voici ce qu'on y trouve :
 
@@ -46,7 +46,7 @@ Mon premier objectif : extraire chacun de ces éléments.
 
 ---
 
-## 🔨 Étape 2 — Parser les logs
+##  Étape 2 — Parser les logs
 
 "Parser" = découper une chaîne de caractères pour en extraire les infos utiles.
 
@@ -95,7 +95,7 @@ Est-ce que c'est la méthode la plus élégante ? Probablement pas. On pourrait 
 
 ---
 
-## 🔍 Étape 3 — Détecter les attaques XSS
+##  Étape 3 — Détecter les attaques XSS
 
 Une attaque XSS essaie d'injecter du JavaScript. Dans les logs, ça ressemble à :
 
@@ -141,7 +141,7 @@ Pour un vrai outil de production, il faudrait améliorer ça. Mais pour comprend
 
 ---
 
-## 💉 Étape 4 — Détecter les injections SQL
+##  Étape 4 — Détecter les injections SQL
 
 Même principe :
 
@@ -171,7 +171,7 @@ def detect_sql_injection(parsed_logs):
 
 ---
 
-## 🖥️ Étape 5 — Version ligne de commande
+##  Étape 5 — Version ligne de commande
 
 À ce stade, j'avais un script utilisable :
 
@@ -185,24 +185,24 @@ Résultat :
 ============================================================
 RAPPORT RÉCAPITULATIF
 ============================================================
-📂 Fichier analysé : access.log
-📝 Lignes analysées : 1547
-🔍 Attaques XSS : 12
-💉 Injections SQL : 8
-🎯 TOTAL MENACES : 20
+ Fichier analysé : access.log
+ Lignes analysées : 1547
+ Attaques XSS : 12
+ Injections SQL : 8
+ TOTAL MENACES : 20
 ============================================================
 
-🚨 IPs malveillantes détectées : 3
-  ⚠️  192.168.1.105
-  ⚠️  10.0.0.42
-  ⚠️  172.16.0.99
+ IPs malveillantes détectées : 3
+    192.168.1.105
+    10.0.0.42
+    172.16.0.99
 ```
 
 Satisfaisant ! Mais je me suis dit : et si je faisais une interface graphique ?
 
 ---
 
-## ✨ Étape 6 — L'interface graphique
+##  Étape 6 — L'interface graphique
 
 J'ai choisi **CustomTkinter** — une librairie Python qui permet de faire des interfaces modernes assez facilement.
 
@@ -260,7 +260,7 @@ L'app propose :
 
 ---
 
-## 📦 Étape 7 — Créer une vraie application
+##  Étape 7 — Créer une vraie application
 
 Taper des commandes dans un terminal à chaque fois, c'est pas pratique. Je voulais une icône sur laquelle cliquer.
 
@@ -282,7 +282,7 @@ Et voilà, j'ai une vraie app dans mon Launchpad !
 
 ---
 
-## 🛠️ Installation complète (pour reproduire)
+##  Installation complète (pour reproduire)
 
 ### Prérequis
 - Python 3.10+
@@ -315,7 +315,7 @@ mv dist/CyberLog.app /Applications/
 
 ---
 
-## 📁 Structure du projet
+##  Structure du projet
 
 ```
 cyberlog-analyzer/
@@ -327,7 +327,7 @@ cyberlog-analyzer/
 
 ---
 
-## 🧠 Ce que j'ai appris
+##  Ce que j'ai appris
 
 **Techniquement :**
 - Manipuler des fichiers et des chaînes en Python
@@ -342,7 +342,7 @@ cyberlog-analyzer/
 
 ---
 
-## 🚀 Améliorations possibles
+##  Améliorations possibles
 
 - [ ] Décoder les URL avant analyse
 - [ ] Détecter le path traversal (`../`)
@@ -352,13 +352,13 @@ cyberlog-analyzer/
 
 ---
 
-## 📜 Licence
+##  Licence
 
 MIT — Utilise-le, modifie-le, améliore-le !
 
 ---
 
-## 👤 Auteur
+##  Auteur
 
 **Matthieu** — En formation cybersécurité chez Jedha, en route vers le pentest.
 
